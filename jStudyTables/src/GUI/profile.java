@@ -20,6 +20,7 @@ import java.util.Date;
 import javax.swing.JTable;
 
 import objects.Person;
+import javax.swing.JMenuItem;
 
 public class profile {
 
@@ -62,6 +63,15 @@ public class profile {
 		
 		JMenu mnFile = new JMenu("File");
 		menuBar.add(mnFile);
+		
+		JMenuItem mntmNew = new JMenuItem("New..");
+		mnFile.add(mntmNew);
+		
+		JMenuItem mntmOpen = new JMenuItem("Open..");
+		mnFile.add(mntmOpen);
+		
+		JMenuItem mntmClose = new JMenuItem("Close");
+		mnFile.add(mntmClose);
 		
 		JMenu mnEdit = new JMenu("Edit");
 		menuBar.add(mnEdit);
@@ -111,7 +121,10 @@ public class profile {
 		btnOpenLog.setBounds(300, 215, 117, 25);
 		frame.getContentPane().add(btnOpenLog);
 		
-		JLabel lblNewLabel = new JLabel(objects.Person.this.getName());
+		/*
+		 * Gotta figure out how to put the name here. 
+		 */
+		JLabel lblNewLabel = new JLabel();
 		lblNewLabel.setBounds(69, 12, 70, 15);
 		frame.getContentPane().add(lblNewLabel);
 		
