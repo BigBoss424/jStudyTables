@@ -11,8 +11,15 @@ import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
+
 import java.awt.List;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.swing.JTable;
+
+import objects.Person;
 
 public class profile {
 
@@ -104,8 +111,14 @@ public class profile {
 		btnOpenLog.setBounds(300, 215, 117, 25);
 		frame.getContentPane().add(btnOpenLog);
 		
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(66, 6, 135, 21);
-		frame.getContentPane().add(textPane);
+		JLabel lblNewLabel = new JLabel(objects.Person.this.getName());
+		lblNewLabel.setBounds(69, 12, 70, 15);
+		frame.getContentPane().add(lblNewLabel);
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("M/dd/yyyy");
+		String date = sdf.format(new Date());
+		JLabel lblNewLabel_1 = new JLabel(date);
+		lblNewLabel_1.setBounds(69, 39, 95, 15);
+		frame.getContentPane().add(lblNewLabel_1);
 	}
 }
