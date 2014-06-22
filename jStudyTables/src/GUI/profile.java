@@ -5,10 +5,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
+import javax.swing.JScrollPane;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.JTextPane;
+import java.awt.List;
+import javax.swing.JTable;
 
 public class profile {
 
 	private JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -52,6 +61,51 @@ public class profile {
 		
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
+		frame.getContentPane().setLayout(null);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(12, 66, 422, 146);
+		frame.getContentPane().add(tabbedPane);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		tabbedPane.addTab("New tab", null, scrollPane, null);
+		
+		List list = new List();
+		scrollPane.setRowHeaderView(list);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JLabel lblName = new JLabel("Name:");
+		lblName.setBounds(12, 12, 70, 15);
+		frame.getContentPane().add(lblName);
+		
+		JLabel lblDate = new JLabel("Date:");
+		lblDate.setBounds(12, 39, 70, 15);
+		frame.getContentPane().add(lblDate);
+		
+		JLabel lblHoursNeeded = new JLabel("Hours Needed:");
+		lblHoursNeeded.setBounds(235, 12, 113, 15);
+		frame.getContentPane().add(lblHoursNeeded);
+		
+		JLabel lblHoursCompleted = new JLabel("Hours Completed:");
+		lblHoursCompleted.setBounds(235, 39, 135, 15);
+		frame.getContentPane().add(lblHoursCompleted);
+		
+		JButton btnAddHours = new JButton("Add Hours");
+		btnAddHours.setBounds(22, 215, 117, 25);
+		frame.getContentPane().add(btnAddHours);
+		
+		JButton btnUpdateGpa = new JButton("Update GPA");
+		btnUpdateGpa.setBounds(151, 215, 135, 25);
+		frame.getContentPane().add(btnUpdateGpa);
+		
+		JButton btnOpenLog = new JButton("Open Log");
+		btnOpenLog.setBounds(300, 215, 117, 25);
+		frame.getContentPane().add(btnOpenLog);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBounds(66, 6, 135, 21);
+		frame.getContentPane().add(textPane);
 	}
-
 }
